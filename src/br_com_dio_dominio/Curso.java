@@ -1,32 +1,20 @@
 package br_com_dio_dominio;
 
-public class Curso {
+public class Curso extends Conteudo {
 
-    private String titulo;
-    private String descricao;
     private int cargaHoraria;
+
+    @Override
+    public double calcularXp() {
+        // TODO Auto-generated method stub
+        return XP_PADRAO * cargaHoraria;
+    }
 
     public Curso() {
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
     public int getCargaHoraria() {
         return cargaHoraria;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 
     public void setCargaHoraria(int cargaHoraria) {
@@ -35,7 +23,8 @@ public class Curso {
 
     @Override
     public String toString() {
-        return "Curso [titulo=" + titulo + ", descricao=" + descricao + ", cargaHoraria=" + cargaHoraria + "]";
+        return "Curso [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", cargaHoraria=" + cargaHoraria
+                + "]";
     }
 
 }
